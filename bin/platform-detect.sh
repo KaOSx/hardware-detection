@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-. /opt/chakra/bin/chd-functions
+. /opt/live/bin/chd-functions
 
 usage () {
     echo "Usage: $0 [-h|--help|-v|--verbose]"
