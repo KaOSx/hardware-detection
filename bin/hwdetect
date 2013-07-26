@@ -2,7 +2,7 @@
 
 # configs
 . /opt/live/bin/chd-functions
-. /etc/live-hwdetect.conf
+. /etc/hwdetect.conf
 
 # needed hooks (located in /opt/live/hooks)
 LOAD_HOOKS="hwdetect_1_base hwdetect_2_platform hwdetect_3_quirks hwdetect_5_network hwdetect_6_alsa hwdetect_7_graphics"
