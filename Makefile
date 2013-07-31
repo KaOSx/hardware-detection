@@ -1,16 +1,16 @@
 BIN_FILES = ${wildcard bin/*}
 HOOKS_FILES = ${wildcard hooks/*}
 LIC_FILES = ${wildcard hwdb/lic_*}
-ETC_FILES = ${wildcard etc/hwdetect.conf}
+ETC_FILES = ${wildcard etc/kdeos-hwdetect.conf}
 MODPROBED_FILES = ${wildcard etc/modprobe.d/*}
 
-SD_OPT ?= opt/live
+SD_OPT ?= opt/kdeos
 SD_ETC ?= etc
 SD_MODPROBED ?= etc/modprobe.d
 
 SRCS	= $(BIN_FILES) $(HOOKS_FILES) $(LIC_FILES) $(ETC_FILES) $(MODPROBED_FILES)
 AUX	= Makefile
-FNAME	= hardware-detection-`date +%Y%m%d`
+FNAME	= kdeos-hardware-detection-`date +%Y%m%d`
 
 
 install:

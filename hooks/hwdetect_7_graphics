@@ -20,7 +20,7 @@
 #   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
 #**************************************************************************
 
-# config is in /etc/hwdetect.conf & /etc/nvidia-drv.conf
+# config is in /etc/kdeos-hwdetect.conf & /etc/nvidia-drv.conf
 
 hwdetect_graphics()
 {

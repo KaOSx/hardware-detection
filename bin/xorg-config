@@ -25,8 +25,8 @@
 # source needed configs
 #
 # the main config
-. /opt/live/bin/chd-functions
-. /etc/hwdetect.conf
+. /opt/kdeos/bin/chd-functions
+. /etc/kdeos-hwdetect.conf
 
 #
 # CHECK KERNEL COMMANDLINE IF XDRIVER VALUE OR NONFREE DRIVERS

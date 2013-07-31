@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-. /opt/live/bin/chd-functions
+. /opt/kdeos/bin/chd-functions
 
 usage () {
     echo "Usage: $0 [-h|--help|-v|--verbose]"

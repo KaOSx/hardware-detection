@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # configs
-. /opt/live/bin/chd-functions
-. /etc/hwdetect.conf
+. /opt/kdeos/bin/chd-functions
+. /etc/kdeos-hwdetect.conf
 
-# needed hooks (located in /opt/live/hooks)
+# needed hooks (located in /opt/kdeos/hooks)
 LOAD_HOOKS="hwdetect_1_base hwdetect_2_platform hwdetect_3_quirks hwdetect_5_network hwdetect_6_alsa hwdetect_7_graphics"
 
 # load hooks
 for hook in ${LOAD_HOOKS}
 do
-	. /opt/live/hooks/${hook}
+	. /opt/kdeos/hooks/${hook}
 done
 
 printhl "Inspecting hardware"
