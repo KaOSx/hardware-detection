@@ -78,8 +78,8 @@ hwdetect_graphics()
 					pacman -Rdd --noconfirm nouveau-dri &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nv &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-31* &>/dev/null
-					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/nvidia-31* &>/dev/null
+					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-3* &>/dev/null
+					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/nvidia-3* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
