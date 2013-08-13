@@ -25,7 +25,7 @@
 # source needed configs
 #
 # the main config
-. /opt/kdeos/bin/chd-functions
+. /opt/kdeos/bin/khd-functions
 . /etc/kdeos-hwdetect.conf
 
 #

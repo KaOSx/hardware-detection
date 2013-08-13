@@ -20,7 +20,7 @@
 #   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
 #**************************************************************************
 
-. /opt/kdeos/bin/chd-functions
+. /opt/kdeos/bin/khd-functions
 
 #
 # functions
