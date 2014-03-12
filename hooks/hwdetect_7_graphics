@@ -2,7 +2,7 @@
 #
 #**************************************************************************
 #   Copyright (C) 2008 Jan Mette                                          *
-#   Copyright (C) 2013 KdeOS                                              *
+#   Copyright (C) 2013-2014 KaOSx                                         *
 #                                                                         *
 #   This script is free software; you can redistribute it and/or modify   *
 #   it under the terms of the GNU General Public License as published by  *
@@ -78,8 +78,8 @@ hwdetect_graphics()
 					pacman -Rdd --noconfirm nouveau-dri &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nv &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-3* &>/dev/null
-					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-3* &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-33* &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-33* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
@@ -99,8 +99,8 @@ hwdetect_graphics()
 					pacman -Rdd --noconfirm nouveau-dri &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nv &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-304xx* &>/dev/null
-					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/nvidia-304xx* &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-304xx* &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-304xx* &>/dev/null
 				
 					# add a status file in /tmp
 					touch /tmp/nvidia-304xx
