@@ -71,7 +71,7 @@ case "$NONFREE" in
       modprobe nvidia &>/dev/null
 
       printhl "Setting up X.Org driver: nvidia-304xx"
-      nvidia-xconfig −−only-one-x-screen
+      #nvidia-xconfig −−only-one-x-screen
     elif [ -e "/tmp/nvidia" ] ; then
       printhl "Loading tainted kernel module: nvidia"
       modprobe nvidia &>/dev/null
