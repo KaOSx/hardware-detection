@@ -103,7 +103,7 @@ hwdetect_graphics()
 					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-340xx-340* &>/dev/null
 				
 					# add a status file in /tmp
-					touch /tmp/nvidia-304xx
+					touch /tmp/nvidia-340xx
 				
 				# or an even older legacy card
 				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV173XX_DB}) ] 
