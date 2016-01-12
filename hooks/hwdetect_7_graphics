@@ -83,6 +83,8 @@ hwdetect_graphics()
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
+					# add status file for calamares
+					touch /var/log/nvidia
 				
 				# or maybe a legacy card
 				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV340XX_DB}) ] 
@@ -104,6 +106,8 @@ hwdetect_graphics()
 				
 					# add a status file in /tmp
 					touch /tmp/nvidia-340xx
+					# add status file for calamares
+					touch /var/log/nvidia-340xx
 				
 				# or an even older legacy card
 				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV173XX_DB}) ] 
