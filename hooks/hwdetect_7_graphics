@@ -85,6 +85,8 @@ hwdetect_graphics()
 					touch /tmp/nvidia
 					# add status file for calamares
 					touch /var/log/nvidia
+					# no wayland session for non-free
+					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
 				
 				# or maybe a legacy card
 				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV340XX_DB}) ] 
@@ -108,6 +110,8 @@ hwdetect_graphics()
 					touch /tmp/nvidia-340xx
 					# add status file for calamares
 					touch /var/log/nvidia-340xx
+					# no wayland session for non-free
+					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
 				
 				# or an even older legacy card
 				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV173XX_DB}) ] 
