@@ -2,7 +2,7 @@
 #
 #**************************************************************************
 #   Copyright (C) 2008 Jan Mette                                          *
-#   Copyright (C) 2013-2017 KaOSx                                         *
+#   Copyright (C) 2013-2018 Anke Boersma                                      *
 #                                                                         *
 #   This script is free software; you can redistribute it and/or modify   *
 #   it under the terms of the GNU General Public License as published by  *
@@ -76,8 +76,6 @@ hwdetect_graphics()
 					rmmod -f drm_kms_helper
 					rmmod -f drm
 					pacman -Rdd --noconfirm libgl &>/dev/null
-					pacman -Rdd --noconfirm nouveau-dri &>/dev/null
-					pacman -Rdd --noconfirm xf86-video-nv &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-38* &>/dev/null
 					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-38* &>/dev/null
@@ -101,8 +99,6 @@ hwdetect_graphics()
 					rmmod -f drm_kms_helper
 					rmmod -f drm
 					pacman -Rdd --noconfirm libgl &>/dev/null
-					pacman -Rdd --noconfirm nouveau-dri &>/dev/null
-					pacman -Rdd --noconfirm xf86-video-nv &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-340xx-utils-340* &>/dev/null
 					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-340xx-340* &>/dev/null
@@ -113,26 +109,7 @@ hwdetect_graphics()
 					touch /var/log/nvidia-340xx
 					# no wayland session for non-free
 					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
-				
-				# or an even older legacy card
-				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV173XX_DB}) ] 
-				then
-				
-					printhl "NVIDIA hardware detected"
-					printhl "Installing driver: nvidia-173xx. This can take a few seconds."
-				
-					rmmod -f nouveau
-					rmmod -f ttm
-					rmmod -f drm_kms_helper
-					rmmod -f drm
-					pacman -Rdd --noconfirm libgl &>/dev/null
-					pacman -Rdd --noconfirm nouveau-dri &>/dev/null
-					pacman -Rdd --noconfirm xf86-video-nv &>/dev/null
-					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/nvidia-173xx* &>/dev/null
-				
-					# add a status file in /tmp
-					touch /tmp/nvidia-173xx
+
 				else
 					printhl "No non-free drivers available for this hardware"
 				fi
@@ -149,9 +126,7 @@ hwdetect_graphics()
 					printhl "Installing driver: ATI catalyst. This can take a few seconds."
 				
 					pacman -Rdd --noconfirm libgl &>/dev/null
-					pacman -Rdd --noconfirm ati-dri &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-ati &>/dev/null
-					pacman -Rdd --noconfirm xf86-video-radeonhd &>/dev/null
 					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/catalyst-utils* &>/dev/null
 					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/catalyst-1* &>/dev/null
 				
@@ -166,9 +141,7 @@ hwdetect_graphics()
 					printhl "Installing driver: ATI catalyst-legacy. This can take a few seconds."
 				
 					pacman -Rdd --noconfirm libgl &>/dev/null
-					pacman -Rdd --noconfirm ati-dri &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-ati &>/dev/null
-					pacman -Rdd --noconfirm xf86-video-radeonhd &>/dev/null
 					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/catalyst-legacy-utils* &>/dev/null
 					pacman -Udf --noconfirm ${HW_DRIVER_PATH}/catalyst-legacy-1* &>/dev/null
 				
