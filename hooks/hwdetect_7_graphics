@@ -88,7 +88,7 @@ hwdetect_graphics()
 					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
 					
                 # or maybe a legacy card
-				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV340XX_DB}) ] 
+				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV390XX_DB}) ] 
 				then
 				
 					printhl "NVIDIA hardware detected"
