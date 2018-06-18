@@ -66,11 +66,11 @@ case "$NONFREE" in
 
       printhl "Setting up X.Org driver: nvidia-340xx"
       #nvidia-xconfig −−only-one-x-screen
-    elif [ -e "/tmp/nvidia-304xx" ] ; then
-      printhl "Loading tainted kernel module: nvidia-304xx"
+    elif [ -e "/tmp/nvidia-390xx" ] ; then
+      printhl "Loading tainted kernel module: nvidia-390xx"
       modprobe nvidia &>/dev/null
 
-      printhl "Setting up X.Org driver: nvidia-304xx"
+      printhl "Setting up X.Org driver: nvidia-390xx"
       #nvidia-xconfig −−only-one-x-screen
     elif [ -e "/tmp/nvidia" ] ; then
       printhl "Loading tainted kernel module: nvidia"
