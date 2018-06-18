@@ -48,7 +48,7 @@ output_detected_driver() {
 
 		if [ -e "/tmp/nvidia-340xx" ] ; then
 		    USED_DRIVER="nvidia"
-		elif [ -e "/tmp/nvidia-304xx" ] ; then
+		elif [ -e "/tmp/nvidia-390xx" ] ; then
 		    USED_DRIVER="nvidia"    
 		elif [ -e "/tmp/nvidia" ] ; then
 		    USED_DRIVER="nvidia"
