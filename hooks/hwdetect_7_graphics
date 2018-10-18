@@ -77,8 +77,8 @@ hwdetect_graphics()
 					rmmod -f drm
 					pacman -Rdd --noconfirm libgl &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-396* &>/dev/null
-					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-396* &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-41* &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-41* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
