@@ -137,6 +137,37 @@ hwdetect_graphics()
 					printhl "No non-free drivers available for this hardware"
 				fi
 			
+			elif [ "$CARD_NVIDIA" != "" ] && [ "$CARD_INTEL" !== "" ]
+			then
+			
+				# check if its a card supported by the latest driver
+				if [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV_DB}) ] 
+				then
+
+					printhl "NVIDIA hybrid hardware detected"
+					printhl "Installing driver: nvidia. This can take a few seconds."
+			
+					rmmod -f nouveau
+					rmmod -f ttm
+					rmmod -f drm_kms_helper
+					rmmod -f drm
+					pacman -Rdd --noconfirm libgl &>/dev/null
+					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-44* &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/nvidia-44* &>/dev/null
+					pacman -Ud --force --noconfirm ${HW_DRIVER_PATH}/prime &>/dev/null
+			
+					# add a status file in /tmp
+					touch /tmp/nvidia-prime
+					# add status file for calamares
+					touch /var/log/nvidia-prime
+					# no wayland session for non-free
+					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
+					
+                else
+					printhl "No non-free drivers available for this hardware"
+				fi
+			
 			
 			elif [ "$CARD_ATI" != "" ]
 			then

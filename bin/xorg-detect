@@ -2,7 +2,7 @@
 #
 #**************************************************************************
 #   Copyright (C) 2008 Jan Mette                                          *
-#   Copyright (C) 2012-2016 Anke Boersma demm@kaosx.us                    *
+#   Copyright (C) 2012-2019 Anke Boersma demm@kaosx.us                    *
 #                                                                         *
 #   This script is free software; you can redistribute it and/or modify   *
 #   it under the terms of the GNU General Public License as published by  *
@@ -52,6 +52,8 @@ output_detected_driver() {
 		    USED_DRIVER="nvidia"    
 		elif [ -e "/tmp/nvidia" ] ; then
 		    USED_DRIVER="nvidia"
+        elif [ -e "/tmp/nvidia-prime" ] ; then
+		    USED_DRIVER="nvidia-prime"
 		elif [ -e "/tmp/catalyst" ] ; then
 		    USED_DRIVER="fglrx"
 		elif [ -e "/tmp/catalyst-legacy" ] ; then
