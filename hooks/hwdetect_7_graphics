@@ -75,7 +75,6 @@ hwdetect_graphics()
 					rmmod -f ttm
 					rmmod -f drm_kms_helper
 					rmmod -f drm
-					pacman -Rdd --noconfirm libgl &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-44* &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-44* &>/dev/null
@@ -98,7 +97,6 @@ hwdetect_graphics()
 					rmmod -f ttm
 					rmmod -f drm_kms_helper
 					rmmod -f drm
-					pacman -Rdd --noconfirm libgl &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-390xx-utils-390* &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-390xx-390* &>/dev/null
@@ -121,7 +119,6 @@ hwdetect_graphics()
 					rmmod -f ttm
 					rmmod -f drm_kms_helper
 					rmmod -f drm
-					pacman -Rdd --noconfirm libgl &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-340xx-utils-340* &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-340xx-340* &>/dev/null
@@ -151,7 +148,7 @@ hwdetect_graphics()
 					rmmod -f ttm
 					rmmod -f drm_kms_helper
 					rmmod -f drm
-					pacman -Rdd --noconfirm libgl &>/dev/null
+					pacman -Rdd --noconfirm xf86-video-intel &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-44* &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-44* &>/dev/null
