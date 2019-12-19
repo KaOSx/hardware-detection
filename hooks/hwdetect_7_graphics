@@ -76,8 +76,8 @@ hwdetect_graphics()
 					rmmod -f drm_kms_helper
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-44* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-44* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:44* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-next-1:44* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
@@ -99,7 +99,7 @@ hwdetect_graphics()
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-390xx-utils-390* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-390xx-390* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-390xx-next-390* &>/dev/null
 				
 					# add a status file in /tmp
 					touch /tmp/nvidia-390xx
