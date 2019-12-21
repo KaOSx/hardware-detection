@@ -77,7 +77,7 @@ hwdetect_graphics()
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:44* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-next-1:44* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:44* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
@@ -134,7 +134,7 @@ hwdetect_graphics()
 					printhl "No non-free drivers available for this hardware"
 				fi
 			
-			elif [ "$CARD_NVIDIA" != "" ] && [ "$CARD_INTEL" !== "" ]
+			elif [ "$CARD_NVIDIA" != "" ] && [ "$CARD_INTEL" != "" ]
 			then
 			
 				# check if its a card supported by the latest driver
@@ -150,8 +150,8 @@ hwdetect_graphics()
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-intel &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-44* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-44* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:44* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:44* &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/prime &>/dev/null
 			
 					# add a status file in /tmp
