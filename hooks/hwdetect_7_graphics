@@ -152,7 +152,7 @@ hwdetect_graphics()
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:44* &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:44* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/prime &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/prime* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia-prime

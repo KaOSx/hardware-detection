@@ -80,18 +80,13 @@ case "$NONFREE" in
 	
       printhl "Setting up X.Org driver: nvidia"
       #nvidia-xconfig −−only-one-x-screen
-    elif [ -e "/tmp/catalyst" ] ; then
-      printhl "Loading tainted kernel module: catalyst"
-      modprobe fglrx &>/dev/null
-  
-      printhl "Setting up X.Org driver: catalyst"
-      aticonfig --initial 
-    elif [ -e "/tmp/catalyst-legacy" ] ; then
-      printhl "Loading tainted kernel module: catalyst-legacy"
-      modprobe fglrx &>/dev/null
-  
-      printhl "Setting up X.Org driver: catalyst-legacy"
-      aticonfig --initial 
+    elif [ -e "/tmp/nvidia-prime" ] ; then
+      printhl "Loading tainted kernel module: nvidia with prime"
+      modprobe nvidia &>/dev/null
+      modprobe nvidia-drm &>/dev/null
+	
+      printhl "Setting up X.Org driver: nvidia-prime"
+      #nvidia-xconfig −−only-one-x-screen  
     else                   
       set_free_config
     fi                     
