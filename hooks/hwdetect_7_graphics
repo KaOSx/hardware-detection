@@ -2,7 +2,7 @@
 #
 #**************************************************************************
 #   Copyright (C) 2008 Jan Mette                                          *
-#   Copyright (C) 2013-2019 Anke Boersma                                      *
+#   Copyright (C) 2013-2020 Anke Boersma                                      *
 #                                                                         *
 #   This script is free software; you can redistribute it and/or modify   *
 #   it under the terms of the GNU General Public License as published by  *
@@ -56,7 +56,7 @@ hwdetect_graphics()
 
 		yes)
 			# check for vendors
-			CARD_NVIDIA=$(lspci -n | sed -n "s/.* 0300: 10de:\(....\).*/\1/p")
+			CARD_NVIDIA=$(lspci -n | sed -n "s/.* 03.*: 10de:\(....\).*/\1/p")
 			CARD_ATI=$(lspci -n | sed -n "s/.* 0300: 1002:\(....\).*/\1/p")
 			CARD_INTEL=$(lspci -n | sed -n "s/.* 0300: 8086:\(....\).*/\1/p")
 
