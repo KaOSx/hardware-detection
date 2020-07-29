@@ -76,8 +76,8 @@ hwdetect_graphics()
 					rmmod -f drm_kms_helper
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:44* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:44* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:45* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:45* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
@@ -150,8 +150,8 @@ hwdetect_graphics()
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-intel &>/dev/null
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:44* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:44* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:45* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:45* &>/dev/null
 					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/prime* &>/dev/null
 			
 					# add a status file in /tmp
