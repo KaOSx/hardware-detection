@@ -76,8 +76,8 @@ hwdetect_graphics()
 					rmmod -f drm_kms_helper
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:47* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:47* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:49* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:49* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
@@ -108,25 +108,25 @@ hwdetect_graphics()
 					# no wayland session for non-free
 					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
 				
-				# or even older legacy card
-				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV340XX_DB}) ] 
+				# or a newer legacy card
+				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV470XX_DB}) ] 
 				then
 				
 					printhl "NVIDIA hardware detected"
-					printhl "Installing driver: nvidia-340xx. This can take a few seconds."
+					printhl "Installing driver: nvidia-470xx. This can take a few seconds."
 				
 					rmmod -f nouveau
 					rmmod -f ttm
 					rmmod -f drm_kms_helper
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-340xx-utils-340* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-340xx-340* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-470xx-utils-470* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-470xx-470* &>/dev/null
 				
 					# add a status file in /tmp
-					touch /tmp/nvidia-340xx
+					touch /tmp/nvidia-470xx
 					# add status file for calamares
-					touch /var/log/nvidia-340xx
+					touch /var/log/nvidia-470xx
 					# no wayland session for non-free
 					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
 

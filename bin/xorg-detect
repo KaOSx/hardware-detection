@@ -46,9 +46,9 @@ generate_initial_config() {
 output_detected_driver() {
                 XORG_DRIVERS="$(sed -rn 's/^\t(\w*)$/\1/p' /tmp/xorg_detection.log)"
 
-		if [ -e "/tmp/nvidia-340xx" ] ; then
+		if [ -e "/tmp/nvidia-390xx" ] ; then
 		    USED_DRIVER="nvidia"
-		elif [ -e "/tmp/nvidia-390xx" ] ; then
+		elif [ -e "/tmp/nvidia-470xx" ] ; then
 		    USED_DRIVER="nvidia"    
 		elif [ -e "/tmp/nvidia" ] ; then
 		    USED_DRIVER="nvidia"

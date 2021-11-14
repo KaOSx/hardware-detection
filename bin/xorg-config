@@ -60,18 +60,19 @@ printhl "Configuring video driver"
 
 case "$NONFREE" in
   yes)
-    if [ -e "/tmp/nvidia-340xx" ] ; then
-      printhl "Loading tainted kernel module: nvidia-340xx"
-      modprobe nvidia &>/dev/null
-
-      printhl "Setting up X.Org driver: nvidia-340xx"
-      #nvidia-xconfig −−only-one-x-screen
-    elif [ -e "/tmp/nvidia-390xx" ] ; then
+    if [ -e "/tmp/nvidia-390xx" ] ; then
       printhl "Loading tainted kernel module: nvidia-390xx"
       modprobe nvidia &>/dev/null
       modprobe nvidia-drm &>/dev/null
 
       printhl "Setting up X.Org driver: nvidia-390xx"
+      #nvidia-xconfig −−only-one-x-screen
+    elif [ -e "/tmp/nvidia-470xx" ] ; then
+      printhl "Loading tainted kernel module: nvidia-470xx"
+      modprobe nvidia &>/dev/null
+      modprobe nvidia-drm &>/dev/null
+
+      printhl "Setting up X.Org driver: nvidia-470xx"
       #nvidia-xconfig −−only-one-x-screen
     elif [ -e "/tmp/nvidia" ] ; then
       printhl "Loading tainted kernel module: nvidia"
