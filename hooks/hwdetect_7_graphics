@@ -76,8 +76,8 @@ hwdetect_graphics()
 					rmmod -f drm_kms_helper
 					rmmod -f drm
 					pacman -Rdd --noconfirm xf86-video-nouveau &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:49* &>/dev/null
-					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:49* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-utils-1:51* &>/dev/null
+					pacman -Ud --noconfirm ${HW_DRIVER_PATH}/nvidia-1:51* &>/dev/null
 			
 					# add a status file in /tmp
 					touch /tmp/nvidia
