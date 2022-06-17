@@ -10,6 +10,7 @@ hwdetect_base()
 
 	if [ -n "$base_check_virtualbox" ]; then
 		printhl "Virtualization detected: VirtualBox"
+		sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
 	elif [ -n "$base_check_vmware" ]; then
 		printhl "Virtualization detected: VMware"
 	elif [ -n "$base_check_qemu" ]; then
