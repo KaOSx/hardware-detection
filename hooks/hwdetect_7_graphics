@@ -2,7 +2,7 @@
 #
 #**************************************************************************
 #   Copyright (C) 2008 Jan Mette                                          *
-#   Copyright (C) 2013-2023 Anke Boersma                                  *
+#   Copyright (C) 2013-2024 Anke Boersma                                  *
 #                                                                         *
 #   This script is free software; you can redistribute it and/or modify   *
 #   it under the terms of the GNU General Public License as published by  *
@@ -84,7 +84,7 @@ hwdetect_graphics()
 					# add status file for calamares
 					touch /var/log/nvidia
 					# no wayland session for non-free
-					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
+					sed -i 's|Session=plasma.desktop|Session=plasmax11.desktop|' /etc/sddm.conf
 					
                 # or maybe a legacy card
 				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV390XX_DB}) ] 
@@ -106,7 +106,7 @@ hwdetect_graphics()
 					# add status file for calamares
 					touch /var/log/nvidia-390xx
 					# no wayland session for non-free
-					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
+					sed -i 's|Session=plasma.desktop|Session=plasmax11.desktop|' /etc/sddm.conf
 				
 				# or a newer legacy card
 				elif [ $(grep -i "$CARD_NVIDIA" ${HW_DB_PATH}/${NV470XX_DB}) ] 
@@ -128,7 +128,7 @@ hwdetect_graphics()
 					# add status file for calamares
 					touch /var/log/nvidia-470xx
 					# no wayland session for non-free
-					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
+					sed -i 's|Session=plasma.desktop|Session=plasmax11.desktop|' /etc/sddm.conf
 
 				else
 					printhl "No non-free drivers available for this hardware"
@@ -159,7 +159,7 @@ hwdetect_graphics()
 					# add status file for calamares
 					touch /var/log/nvidia-prime
 					# no wayland session for non-free
-					sed -i 's|Session=plasmawayland.desktop|Session=plasma.desktop|' /etc/sddm.conf
+					sed -i 's|Session=plasma.desktop|Session=plasmax11.desktop|' /etc/sddm.conf
 					
                 else
 					printhl "No non-free drivers available for this hardware"
