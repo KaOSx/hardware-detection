@@ -84,7 +84,7 @@ hwdetect_graphics()
 					# add status file for calamares
 					touch /var/log/nvidia
 					# no wayland session for non-free
-					sed -i 's|Session=plasma.desktop|Session=plasmax11.desktop|' /etc/sddm.conf
+					sed -i 's|Session=plasma|Session=plasmax11|' /etc/sddm.conf
 					sed -i 's|DisplayServer=wayland|DisplayServer=x11|' /etc/sddm.conf
 					
                 # or maybe a legacy card
@@ -107,7 +107,7 @@ hwdetect_graphics()
 					# add status file for calamares
 					touch /var/log/nvidia-390xx
 					# no wayland session for non-free
-					sed -i 's|Session=plasma.desktop|Session=plasmax11.desktop|' /etc/sddm.conf
+					sed -i 's|Session=plasma|Session=plasmax11|' /etc/sddm.conf
 					sed -i 's|DisplayServer=wayland|DisplayServer=x11|' /etc/sddm.conf
 				
 				# or a newer legacy card
@@ -130,7 +130,7 @@ hwdetect_graphics()
 					# add status file for calamares
 					touch /var/log/nvidia-470xx
 					# no wayland session for non-free
-					sed -i 's|Session=plasma.desktop|Session=plasmax11.desktop|' /etc/sddm.conf
+					sed -i 's|Session=plasma|Session=plasmax11|' /etc/sddm.conf
 					sed -i 's|DisplayServer=wayland|DisplayServer=x11|' /etc/sddm.conf
 
 				else
@@ -162,7 +162,7 @@ hwdetect_graphics()
 					# add status file for calamares
 					touch /var/log/nvidia-prime
 					# no wayland session for non-free
-					sed -i 's|Session=plasma.desktop|Session=plasmax11.desktop|' /etc/sddm.conf
+					sed -i 's|Session=plasma|Session=plasmax11|' /etc/sddm.conf
 					sed -i 's|DisplayServer=wayland|DisplayServer=x11|' /etc/sddm.conf
 					
                 else
